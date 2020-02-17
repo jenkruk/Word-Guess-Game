@@ -1,86 +1,84 @@
-var rand = 0;
-var word = "";
-var numWrong = 0;
-var numRight = 0;
-var phraseLength = 0;
-var numChar = 0;
-var flowers = [
-    'Amaryllis', 'Baby’s Breath', 'Bellflower', 'Buttercup', 'Calla Lily', 'Chrysanthemum', 'Cornflower', 'Daffodil', 'Dahlia', 'Daisy', 'English Bluebell', 'Evening Primrose', 'Forget me not', 'Gardenia', 'Geranium', 'Gerbera', 'Hibiscus', 'Honeysuckle', 'Hyacinth', 'Hydrangea', 'Jacob’s Ladder', 'Jasmine', 'Lavender', 'Lilac', 'Magnolia', 'Marigold', 'Mayflower', 'Mimosa', 'Morning Glory', 'Orchid', 'Peony', 'Periwinkle', 'Petunia', 'Plumeria', 'Poinsettia', 'Poppy', 'Snapdragon', 'Sunflower', 'Sweet Pea', 'Tulip', 'Violet', 'Waterlily', 'Wisteria',
-];
+var critters = ["Owl", "Butterfly", "Ladybug", "Caterpillar", "Bluebird", "Sparrow", "Woodpecker", "Hummingbird", "Mockingbird", "Beetle", "Cardinal", "Meadowlark", "Cricket", "Dragonfly", "Falcon", "Swallow", "Grasshopper", "Mosquito", "Stinkbug", "Weevil", "Centipede", "Inchworm", "Parrot", "Lovebird", "Flamingo", "Penguin", "Chicken", "spider"];
 
-var trees = [
-    'Apple’, ‘Bay Laurel’, ‘Bonsai’,‘Brazil nut’,‘Cacao’,‘California-laurel’,‘Cherry Blossom’, "Christmas",‘Coconut’,‘Cottonwood’,‘Cypress’,‘Dogwood’,‘Douglas fir’, ‘Family’, ‘Ficus’‘ Fiddleleaf fig’, ‘Giant Sequoia’, ‘Incense cedar’, ‘Juniper’, ‘Maidenhair’, ‘Mountain mahogany’, ‘Palm’, ‘Pine’, ‘Pistachio’, ‘Redwood’‘ Rubber Tree’, ‘Russian olive’, ’Spruce’, ‘Sugar maple’‘ Sycamore’, ‘Walnut’, ‘Weeping willow’, ‘White cedar’, ‘Willow’, 
-];
+let answer = '';
+let maxWrong = 7;
+let mistakes = 0;
+let guessed = [];
+let wordStatus = null;
 
-var critters = [
-    'Butterfly', 'Ladybug’, ‘Caterpillar’, ‘Bumble Bee’, ‘Bluebird’, ‘Sparrow’, ‘Woodpecker’, ‘Hummingbird’, ‘Mockingbird, ‘Beetle’, ‘Cardinal’, ‘Meadowlark’, ‘Cricket’, ‘Dragonfly’, ‘Falcon’, ‘Swallow’, ‘Grasshopper’, ‘Mosquito’, ‘Praying Mantis’, ‘Short eared owl’, ‘Yellow Warbler’, ‘Stinkbug’, ‘Weevil’, ‘Centipede’,  ‘Inchworm’, ‘Parrot’, ‘Lovebirds’, ‘Flamingo’, ‘Penguin’, ‘Chicken’, ‘Duckling’, ‘Roly-poly’, ‘The itsy bitsy spider’,
-];
-
-var songs = [
-    'The Birds and the bees', 'What a wonderful world', 'Somewhere over the rainbow', 'Walking on sunshine', 'Good Vibrations',
-    'Uptown Funk', "I've had the time of my life", "Ain't no mountain high enough", 'Beautiful Day', "You've got a friend", "Here comes the sun", 'Pocket full of Sunshine', 'Peaceful Easy Feeling', 'Good day sunshine', 'Shake it off',
-];
-
-function flower() {
-    rand = Math.floor(Math.random() * phrases.length);
-    word = flowers[rand];
-    document.getElementById('start').style.display = 'none';
-    document.getElementById('categoryName').innerHTML = "Flowers";
-    treeLives();
+function randomWord() {
+    answer = critters[Math.floor(Math.random() * critters.length)];
 }
 
-function tree() {
-    rand = Math.floor(Math.random() * phrases.length);
-    word = trees[rand];
-    document.getElementById('start').style.display = 'none';
-    document.getElementById('categoryName').innerHTML = "Trees";
-    treeLives();
+function generateButtons() {
+    let buttonsHTML = 'abcdefghijklmnopqrstuvwxyz'.split('').map(letter =>
+        `
+      <button
+        class="btn btn-lg btn-success py-2 px-4 m-2"
+        id='` + letter + `'
+        onClick="handleGuess('` + letter + `')">
+        ` + letter + `
+      </button>
+        `).join('');
+
+    document.getElementById('keyboard').innerHTML = buttonsHTML;
 }
 
-function critter() {
-    rand = Math.floor(Math.random() * phrases.length);
-    word = critters[rand];
-    document.getElementById('start').style.display = 'none';
-    document.getElementById('categoryName').innerHTML = "Birds & Bugs";
-    treeLives();
-}
+function handleGuess(chosenLetter) {
+    guessed.indexOf(chosenLetter) === -1 ? guessed.push(chosenLetter) : null;
+    document.getElementById(chosenLetter).setAttribute('disabled', true);
 
-function song() {
-    rand = Math.floor(Math.random() * phrases.length);
-    word = songs[rand];
-    document.getElementById('start').style.display = 'none';
-    document.getElementById('categoryName').innerHTML = "Songs";
-    treeLives();
-}
-
-function treeLives() {
-    x = word.length;
-    y = x - 1;
-    while (x > 0) {
-        numChar++;
-        var letter = word.substring(y, x);
-        if (letter === " ") {
-            document.getElementById('letter' + x).innerHTML = "&nbsp;";
-            document.getElementById('letter' + x).style.visibility = "hidden";
-            document.getElementById('letter' + x).style.display = "block";
-            document.getElementById('underline' + x).style.display = "block";
-            spaces++;
-        } else if (letter === "?" || letter === "!" || letter === "," || letter === "." || letter === "-" || letter === "'") {
-            document.getElementById('letter' + x).innerHTML = letter;
-            document.getElementById('letter' + x).style.display = "block";
-            document.getElementById('underline' + x).style.display = "block";
-            spaces++;
-        } else {
-            document.getElementById('letter' + x).innerHTML = letter;
-            document.getElementById('letter' + x).style.visibility = "hidden";
-            document.getElementById('underline' + x).style.display = "block";
-            document.getElementById('underline' + x).style.borderBottom = "3px solid orange";
-        }
-        x--;
-        y--;
+    if (answer.indexOf(chosenLetter) >= 0) {
+        guessedWord();
+        checkIfGameWon();
+    } else if (answer.indexOf(chosenLetter) === -1) {
+        mistakes++;
+        updateMistakes();
+        checkIfGameLost();
+        updateTreePicture();
     }
-    phraseLength = word.length - spaces;
-    document.getElementById('letsPlay').style.display = "block";
-    splitWords();
-    draw();
 }
+
+function updateTreePicture() {
+    document.getElementById('treePic').src = "/assets/images/" + mistakes + '.jpg';
+}
+
+function checkIfGameWon() {
+    if (wordStatus === answer) {
+        document.getElementById('keyboard').innerHTML = 'You Won!!!';
+    }
+}
+
+function checkIfGameLost() {
+    if (mistakes === maxWrong) {
+        document.getElementById('wordSpotlight').innerHTML = 'The answer was: ' + answer;
+        document.getElementById('keyboard').innerHTML = 'Try Again';
+    }
+}
+
+function guessedWord() {
+    wordStatus = answer.split('').map(letter => (guessed.indexOf(letter) >= 0 ? letter : " _ ")).join('');
+
+    document.getElementById('wordSpotlight').innerHTML = wordStatus;
+}
+
+function updateMistakes() {
+    document.getElementById('mistakes').innerHTML = mistakes;
+}
+
+function reset() {
+    mistakes = 0;
+    guessed = [];
+    document.getElementById('treePic').src = 'assets/images/0.jpg';
+
+    randomWord();
+    guessedWord();
+    updateMistakes();
+    generateButtons();
+}
+
+document.getElementById('maxWrong').innerHTML = maxWrong;
+
+randomWord();
+generateButtons();
+guessedWord();
