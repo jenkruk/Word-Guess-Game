@@ -21,6 +21,8 @@ var songs = [
   'happy', 'anticipation', 'bathwater', 'dreams', 'luka', 'promises', 'valentine', 'why'
 ];
 
+var sound = document.getElementById('sound');
+
 /* functions that allow each button link to it's intended category */
 function main() {
   document.getElementById("main").style.display = "block";
@@ -126,15 +128,16 @@ function updateTreePicture() {
 
 function checkIfGameWon() {
   if (wordStatus === answer) {
-    document.getElementById('keyboard').innerHTML = 'You Won!!!';
+    document.getElementById('keyboard').innerHTML = 'You Won, Smarty Pants!';
     document.getElementById('treePic').src = "./assets/images/0.jpg";
+    sound.play();
   }
 }
 
 function checkIfGameLost() {
   if (mistakes === maxWrong) {
     document.getElementById('wordSpotlight').innerHTML = 'The answer was: ' + answer;
-    document.getElementById('keyboard').innerHTML = 'You Lost!!!';
+    document.getElementById('keyboard').innerHTML = 'You did not win, but you are still a winner in my book!';
   }
 }
 
@@ -148,6 +151,7 @@ function mainMenu() {
   randomWord();
   guessedWord();
   wordStatus = null;
+  sound.pause();
 }
 
 function tryAgain() {
@@ -163,6 +167,7 @@ function tryAgain() {
   randomWord();
   generateButtons();
   guessedWord();
+  sound.pause();
 }
 
 randomWord();
