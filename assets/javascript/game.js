@@ -61,7 +61,7 @@ function critter() {
   document.getElementById("play").style.display = "block";
   answer = critters[Math.floor(Math.random() * critters.length)];
   word = critters[answer]
-  document.getElementById('categoryName').innerHTML = "Birds & Bugs";
+  document.getElementById('categoryName').innerHTML = "Critters";
   updateTreePicture();
 }
 
@@ -83,7 +83,7 @@ function generateButtons() {
   let buttonsHTML = 'abcdefghijklmnopqrstuvwxyz'.split('').map(letter =>
     `
       <button
-        class="btn keyboard my-2 py-1 btn-success text-uppercase"
+        class="btn keyboard my-2 btn-success text-uppercase"
         id='` + letter + `'
         onClick="handleGuess('` + letter + `')"
       >
@@ -148,6 +148,7 @@ function checkIfGameLost() {
 function backToMain() {
   document.getElementById("main").style.display = "block";
   document.getElementById("play").style.display = "none";
+  document.getElementById('treePic').src = "./assets/main img/main.jpg";
   sound.pause();
 }
 
