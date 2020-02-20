@@ -1,15 +1,138 @@
- * {
-     font-family: 'Courier New', Courier, monospace;
-     color: #124b90;
- }
+* {
+    font-family: 'Courier New', Courier, monospace;
+    color: #124b90;
+    text-align: center;
+}
 
- .gameTitle {
-     font-family: 'Antic Didone', serif;
-     color: #f7931e;
-     font-size: 96px;
-     text-shadow: 2px 4px 6px darkgrey;
- }
+.gameTitle {
+    font-family: 'Antic Didone', serif;
+    color: #f7931e;
+    font-size: 96px;
+    text-shadow: 2px 4px 6px darkgrey;
+}
 
- p {
-     font-size: 48px;
- }
+#main,
+p {
+    font-size: 48px;
+}
+
+
+#play {
+    display: none;
+}
+
+#track {
+    font-size: 2rem;
+}
+
+#keyboard {
+    width: 1188px;
+    margin: 0 auto;
+}
+
+button {
+    font-size: 48px !important;
+    width: 80px;
+    height: 70px;
+    cursor: pointer;
+    background-color: #81c049;
+    border-radius: 0 !important;
+}
+
+button:hover {
+    background-color: #f5e640;
+    font-size: 70px;
+    border-radius: 0 !important;
+}
+
+button:active {
+    background-color: #f5e640;
+    width: 80px;
+    font-size: 48px;
+    border-radius: 0 !important;
+}
+
+#categoryName {
+    text-align: center;
+    width: 1188px;
+    background-color: lightblue;
+    margin: 0 auto;
+}
+
+
+#tryAgain {
+    float: left;
+    margin-right: 8px !important;
+    margin-top: 20px;
+    font-size: 36px;
+    line-height: 60px;
+    text-align: center;
+    width: 250px;
+    height: 70px;
+    cursor: pointer;
+    padding-top: 5px;
+    color: white;
+    background-color: #007bff;
+
+}
+
+#tryAgain:hover {
+    float: left;
+    margin-right: 8px !important;
+    background-color: #f5e640;
+    font-size: 42px;
+}
+
+#tryAgain:active {
+    float: left;
+    margin-right: 8px !important;
+    background-color: #f5e640;
+    width: 250px;
+    font-size: 36px;
+}
+
+.menuOptions {
+    margin: 0 auto;
+    font-size: 36px;
+    cursor: pointer;
+}
+
+.menuOptions :hover {
+    margin: 0 auto;
+    font-size: 42px;
+    cursor: pointer;
+}
+
+.menuOptions :active {
+    margin: 0 auto;
+    font-size: 36px;
+    cursor: pointer;
+}
+
+#mainMenu {
+    float: left;
+    font-size: 36px;
+    line-height: 60px;
+    text-align: center;
+    width: 250px;
+    height: 70px;
+    cursor: pointer;
+    padding-top: 5px;
+    color: white;
+    background-color: #ffc107;
+    margin: 0 auto;
+    margin-top: 20px;
+}
+
+#mainMenu:hover {
+    float: left;
+    background-color: #f5e640;
+    font-size: 42px;
+}
+
+#mainMenu:active {
+    float: left;
+    background-color: #f5e640;
+    width: 250px;
+    font-size: 36px;
+}

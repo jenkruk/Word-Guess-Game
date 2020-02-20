@@ -2,49 +2,85 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- css -->
-    <link rel="stylesheet" type="text/css" href="/assets/css/style.css" />
-    <!-- bootstrap -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
-    </link>
-    <!--favicon-->
-    <link rel="icon" href="/assets/images/favicons/favicon.jpg" type="image/jpg" sizes="16x16">
-    <!-- Google Font -->
-    <link href="https://fonts.googleapis.com/css?family=Antic+Didone&display=swap" rel="stylesheet">
-    <!-- Tab Title -->
-    <title>Tree of Lives</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- css -->
+  <link rel="stylesheet" type="text/css" href="/assets/css/style.css" />
+  <!-- bootstrap -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+  </link>
+  <!--favicon-->
+  <link rel="icon" href="/assets/favicon/favicon.png" type="image/png" sizes="16x16">
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css?family=Antic+Didone&display=swap" rel="stylesheet">
+  <!-- Tab Title -->
+  <title>Tree of Lives</title>
 </head>
 
-<body>
+<div class="container-fluid text-center">
+  <div class="gameTitle py-5">Tree of Lives</div>
+  <img id='treePic' src="/assets/images/0.jpg" alt="Tree of Lives">
 
-    <body>
-        <div class="container text-center">
-            <div class="gameTitle py-5">Tree of Lives</div>
-            <img id='treePic' src="/assets/images/0.jpg" alt="Tree of Lives">
-            <!--tracking the score-->
-            <p class="pt-5">Guess the Bird or Bug!</p>
-            <p class="tracking">Wrong Guesses: <span id='mistakes'>0</span> of <span id='maxWrong'></span></p>
-            <div class="text-uppercase">
-                <!--blank lines for the random word-->
-                <p id="wordSpotlight">blank lines for the randomly chosen word</p>
-                <!--The letters to choose from-->
-                <p id="keyboard"></p>
-                <button class="btn btn-warning mt-5" onClick="reset()">Start Over</button>
-            </div>
+  <!--MAIN PAGE-->
+  <div id="main">
+    <div class="intro">
+      <row class="text-center">
+        <div class="col-md-12">
+          <p class="text-center mt-5 ">Select a category to get started!</p>
         </div>
-        </div>
+      </row>
+    </div>
 
-        <!-- jQuery -->
-        <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"></script>
-        <!-- jsDelivr -->
-        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
-        <!--bootstrap javascript-->
-        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
-        <!-- javascript game.js-->
-        <script type="text/javascript" src="/assets/javascript/game.js"></script>
+    <row class="menuOptions d-inline-flex mt-4 text-center">
+      <div class="text-center">
+        <div class="bg-primary text-white m-2 py-3 px-5" onclick="flower()">Flowers</div>
+        <div class="bg-success text-white m-2 py-3 px-5" onclick="tree()">Trees</div>
+      </div>
 
-        </div>
+      <div class="text-center">
+        <div class="bg-warning text-white m-2 py-3 px-5" onclick="critter()">Birds & Bugs</div>
+        <div class="bg-danger text-white m-2 py-3 px-5" onclick="song()">Songs</div>
+      </div>
+    </row>
+  </div>
+</div>
+
+<!--PLAY PAGE-->
+<div class="container pt-5"></div>
+<div id="play">
+  <!--tracking the score-->
+  <row class="text-center">
+    <p id="categoryName"></p>
+  </row>
+  <row class="text-center">
+    <div id="track">Wrong Guesses: <span id='mistakes'>0</span> of <span id='maxWrong'></span></div>
+  </row>
+
+  <!--blank lines for the random word-->
+  <row class="text-uppercase text-center"></row>
+  <p id="wordSpotlight">blank lines for the randomly chosen word</p>
+  </row>
+  <row class="text-center text-uppercase">
+    <!--keyboard letters-->
+    <div id="keyboard"></div>
+  </row>
+  <row class="text-center d-inline-flex">
+    <div id="tryAgain" onClick="tryAgain()">Try Again</div>
+    <div id="mainMenu" onClick="mainMenu()">Main Menu</div>
+  </row>
+</div>
+</div>
+</div>
+
+<!-- jQuery -->
+<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"></script>
+<!-- jsDelivr -->
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
+<!--bootstrap javascript-->
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+<!-- javascript game.js-->
+<script type="text/javascript" src="/assets/javascript/game.js"></script>
+
+</body>
 
 </html>
