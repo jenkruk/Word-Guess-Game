@@ -35,7 +35,7 @@ function main() {
 function play() {
   document.getElementById("main").style.display = "none";
   document.getElementById("play").style.display = "block";
-  document.getElementById()
+  document.getElementByClassName("gameTitle").style.display = "none";
 }
 
 function flower() {
@@ -96,13 +96,13 @@ function generateButtons() {
 
 function guessedWord() {
   wordStatus = answer.split('').map(letter => (guessed.indexOf(letter) >= 0 ? letter : ' _ ')).join("");
-  debugger;
 
   document.getElementById("wordSpotlight").innerHTML = wordStatus;
 }
 
 function updateMistakes() {
   document.getElementById('mistakes').innerHTML = mistakes;
+  document.getElementById('mistakes').style.color = "#dc3545";
 }
 
 /* shows how many misses are left */

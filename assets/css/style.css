@@ -11,9 +11,68 @@
     text-shadow: 2px 4px 6px darkgrey;
 }
 
+#wordSpotlight {
+    color: #f8931f;
+}
+
 #main,
 p {
     font-size: 48px;
+}
+
+#blue {
+    background-color: #007bff;
+}
+
+#green {
+    background-color: #28a745;
+}
+
+#orange {
+    background-color: #ffc107;
+}
+
+#red {
+    background-color: #dc3545;
+}
+
+
+
+#blue,
+#green,
+#orange,
+#red {
+    margin: 0 auto;
+    margin-top: 20px;
+    font-size: 36px;
+    line-height: 60px;
+    text-align: center;
+    width: 250px;
+    height: 70px;
+    cursor: pointer;
+    padding-top: 5px;
+    color: white;
+}
+
+#orange {
+    margin-right: 30px;
+}
+
+#blue:hover,
+#green:hover,
+#orange:hover,
+#red:hover {
+    color: white;
+    font-size: 42px !important;
+}
+
+#blue:active,
+#green:active,
+#orange:active,
+#red:active {
+    color: white;
+    width: 250px;
+    font-size: 36px !important;
 }
 
 #play {
@@ -58,7 +117,7 @@ button:active {
 #categoryName {
     text-align: center;
     width: 1188px;
-    background-color: lightblue;
+    background-color: #cae4fd;
     margin: 0 auto;
 }
 

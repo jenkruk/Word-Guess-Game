@@ -20,9 +20,9 @@
   <title>Tree of Lives</title>
 </head>
 
-<div class="container-fluid text-center">
+<div class="container-fluid h-100 text-center">
   <div class="gameTitle py-5">Tree of Lives</div>
-  <img id='treePic' src="./assets/images/0.jpg" alt="Tree of Lives">
+  <img id='treePic' src="./assets/main img/main.jpg" alt="Tree of Lives">
 
   <!--MAIN PAGE-->
   <div id="main">
@@ -34,18 +34,22 @@
       </row>
     </div>
 
-    <row class="menuOptions d-inline-flex mt-4 text-center">
-      <div class="text-center">
-        <div class="bg-primary text-white m-2 py-3 px-5" onclick="flower()">Flowers</div>
-        <div class="bg-success text-white m-2 py-3 px-5" onclick="tree()">Trees</div>
-      </div>
-
-      <div class="text-center">
-        <div class="bg-warning text-white m-2 py-3 px-5" onclick="critter()">Birds & Bugs</div>
-        <div class="bg-danger text-white m-2 py-3 px-5" onclick="song()">Songs</div>
-      </div>
-    </row>
+    <!--Category Buttons-->
+    <div class="mainMenu">
+      <row class="text-center d-inline-flex">
+        <div id="blue" onClick="flower()">Flowers</div>
+      </row>
+      <row class="text-center d-inline-flex">
+        <div id="green" onClick="tree()">Trees</div>
+      </row>
+      <row class="text-center d-inline-flex">
+        <div id="orange" onClick="critter()">Critters</div>
+        <div id="red" onClick="song()">Songs</div>
+      </row>
+    </div>
   </div>
+
+</div>
 </div>
 
 <!--PLAY PAGE-->
