@@ -22,12 +22,13 @@ p {
 }
 
 #track {
-    font-size: 1.5rem;
+    font-size: 36px;
 }
 
 #keyboard {
     width: 1188px;
     margin: 0 auto;
+    font-size: 36px;
 }
 
 button {
@@ -73,7 +74,6 @@ button:active {
     padding-top: 5px;
     color: white;
     background-color: #007bff;
-
 }
 
 #tryAgain:hover {

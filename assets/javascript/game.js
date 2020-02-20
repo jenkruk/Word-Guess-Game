@@ -10,7 +10,7 @@ var flowers = [
 ];
 
 var trees = [
-  'apple’, ‘laurel’, ‘bonsai’, ‘brazil’, ‘cacao’, ‘cherry', 'christmas', 'coconut’, ‘cottonwood’, ‘cypress’,‘dogwood’,‘family’, ‘ficus’, ‘fiddleleaf’, ‘sequoia’, ‘juniper’, ‘mahogany’, ‘palm’, ‘pine’, ‘pistachio’, ‘redwood’‘ rubber’, ‘olive’, ’spruce’, ‘maple’, ‘sycamore’, ‘walnut’, ‘cedar’, ‘willow'
+  'apple’, ‘laurel’, ‘bonsai’, ‘brazil’, ‘cacao’, ‘cherry', 'christmas', 'coconut’, ‘cottonwood’, ‘cypress’,‘dogwood’, ‘family’, ‘ficus’, ‘fiddleleaf’, ‘sequoia’, ‘juniper’, ‘mahogany’, ‘palm’, ‘pine’, ‘pistachio’, ‘redwood’, ‘ rubber’, ‘olive’, ’spruce’, ‘maple’, ‘sycamore’, ‘walnut’, ‘cedar’, ‘willow'
 ];
 
 var critters = [
@@ -27,6 +27,7 @@ var sound = document.getElementById('sound');
 function main() {
   document.getElementById("main").style.display = "block";
   document.getElementById("play").style.display = "none";
+  sound.pause();
 }
 
 function play() {
@@ -137,20 +138,13 @@ function checkIfGameWon() {
 function checkIfGameLost() {
   if (mistakes === maxWrong) {
     document.getElementById('wordSpotlight').innerHTML = 'The answer was: ' + answer;
-    document.getElementById('keyboard').innerHTML = 'You did not win, but you are still a winner in my book!';
+    document.getElementById('keyboard').innerHTML. = 'Even though you lost, you will always be a winner in my book!';
   }
 }
 
 function mainMenu() {
   document.getElementById("main").style.display = "block";
   document.getElementById("play").style.display = "none";
-  document.getElementById('treePic').src = "./assets/images/0.jpg";
-  document.getElementById('keyboard').innerHTML = buttonsHTML;
-  mistakes = 0;
-  guessed = [];
-  randomWord();
-  guessedWord();
-  wordStatus = null;
   sound.pause();
 }
 
