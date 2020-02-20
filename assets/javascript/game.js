@@ -30,6 +30,7 @@ function main() {
 function play() {
   document.getElementById("main").style.display = "none";
   document.getElementById("play").style.display = "block";
+  document.getElementById()
 }
 
 function flower() {
