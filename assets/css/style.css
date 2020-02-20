@@ -16,7 +16,6 @@ p {
     font-size: 48px;
 }
 
-
 #play {
     display: none;
 }
@@ -41,16 +40,19 @@ button {
 }
 
 button:hover {
-    background-color: #f5e640;
-    font-size: 70px;
+    background-color: rgb(255, 193, 7) !important;
+    font-size: 58px !important;
     border-radius: 0 !important;
+    border-color: rgb(255, 193, 7) !important;
+    padding: 0 0 20px 0 !important;
 }
 
 button:active {
-    background-color: #f5e640;
+    background-color: rgb(255, 193, 7) !important;
     width: 80px;
-    font-size: 48px;
+    font-size: 48px !important;
     border-radius: 0 !important;
+
 }
 
 #categoryName {
@@ -78,41 +80,23 @@ button:active {
 
 #tryAgain:hover {
     float: left;
-    color: #124b90;
+    color: white;
     margin-right: 8px !important;
-    background-color: lightblue;
+    background-color: rgb(255, 193, 7);
     font-size: 42px;
 }
 
 #tryAgain:active {
     float: left;
-    color: #124b90;
+    color: white;
     margin-right: 8px !important;
-    background-color: lightblue;
+    background-color: rgb(255, 193, 7);
     width: 250px;
     font-size: 36px;
 }
 
-.menuOptions {
-    margin: 0 auto;
-    font-size: 36px;
-    cursor: pointer;
-}
 
-.menuOptions :hover {
-    margin: 0 auto;
-    font-size: 42px;
-    cursor: pointer;
-}
-
-.menuOptions :active {
-    margin: 0 auto;
-    font-size: 36px;
-    cursor: pointer;
-    background-color: lightblue;
-}
-
-#mainMenu {
+#backToMain {
     float: left;
     font-size: 36px;
     line-height: 60px;
@@ -122,22 +106,22 @@ button:active {
     cursor: pointer;
     padding-top: 5px;
     color: white;
-    background-color: #ffc107;
+    background-color: #dc3545;
     margin: 0 auto;
     margin-top: 20px;
 }
 
-#mainMenu:hover {
+#backToMain:hover {
     float: left;
-    color: #124b90;
-    background-color: lightblue;
+    color: white;
+    background-color: rgb(255, 193, 7);
     font-size: 42px;
 }
 
-#mainMenu:active {
+#backToMain:active {
     float: left;
-    color: #124b90;
-    background-color: lightblue;
+    color: white;
+    background-color: rgb(255, 193, 7);
     width: 250px;
     font-size: 36px;
 }

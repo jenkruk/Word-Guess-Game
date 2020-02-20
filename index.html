@@ -14,7 +14,7 @@
   <!-- Google Font -->
   <link href="https://fonts.googleapis.com/css?family=Antic+Didone&display=swap" rel="stylesheet">
   <!-- Sound Affect -->
-  <audio src="./assets/sound/happy.wav" id="sound"></audio>
+  <audio src="./assets/sound/" id="sound" crossOrigin="anonymous"></audio>
 
   <!-- Tab Title -->
   <title>Tree of Lives</title>
@@ -60,16 +60,16 @@
   </row>
 
   <!--blank lines for the random word-->
-  <row class="text-uppercase text-center"></row>
+  <row class="text-center text-uppercase"></row>
   <p id="wordSpotlight">blank lines for the randomly chosen word</p>
   </row>
+  <!--keyboard letters-->
   <row class="text-center text-uppercase">
-    <!--keyboard letters-->
     <div id="keyboard"></div>
   </row>
   <row class="text-center d-inline-flex">
     <div id="tryAgain" onClick="tryAgain()">Try Again</div>
-    <div id="mainMenu" onClick="mainMenu()">Main Menu</div>
+    <div id="backToMain" onClick="backToMain()">Main Menu</div>
   </row>
 </div>
 </div>

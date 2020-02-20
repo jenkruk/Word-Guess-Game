@@ -10,11 +10,11 @@ var flowers = [
 ];
 
 var trees = [
-  'apple’, ‘laurel’, ‘bonsai’, ‘brazil’, ‘cacao’, ‘cherry', 'christmas', 'coconut’, ‘cottonwood’, ‘cypress’,‘dogwood’, ‘family’, ‘ficus’, ‘fiddleleaf’, ‘sequoia’, ‘juniper’, ‘mahogany’, ‘palm’, ‘pine’, ‘pistachio’, ‘redwood’, ‘ rubber’, ‘olive’, ’spruce’, ‘maple’, ‘sycamore’, ‘walnut’, ‘cedar’, ‘willow'
+  'apple’, ‘laurel’, ‘bonsai’, ‘brazil’, ‘cacao’, ‘cherry', 'christmas', 'coconut’, ‘cottonwood’, ‘cypress’, ‘dogwood’, ‘family’, ‘ficus’, ‘fiddleleaf’, ‘sequoia’, ‘juniper’, ‘mahogany’, ‘palm’, ‘pine’, ‘pistachio’, ‘redwood’, ‘rubber’, ‘olive’, ’spruce’, ‘maple’, ‘sycamore’, ‘walnut’, ‘cedar’, ‘willow'
 ];
 
 var critters = [
-  'butterfly', 'ladybug’, ‘caterpillar’, ‘bee’, ‘bluebird’, ‘sparrow’, ‘woodpecker’, ‘hummingbird’, ‘mockingbird, ‘beetle’, ‘cardinal’, ‘meadowlark’, ‘cricket’, ‘dragonfly’, ‘falcon’, ‘swallow’, ‘grasshopper’, ‘mosquito’, ‘mantis’, ‘owl’, ‘stinkbug’, ‘weevil’, ‘centipede’,  ‘inchworm’, ‘parrot’, ‘lovebirds’, ‘flamingo’, ‘penguin’, ‘chicken’, ‘duckling’, ‘spider'
+  'butterfly', 'ladybug’, ‘caterpillar’, ‘bee’, ‘bluebird’, ‘sparrow’, ‘woodpecker’, ‘hummingbird’, ‘mockingbird, ‘beetle’, ‘cardinal’, ‘meadowlark’, ‘cricket’, ‘dragonfly’, ‘falcon’, ‘swallow’, ‘grasshopper’, ‘mosquito’, ‘mantis’, ‘owl’, ‘stinkbug’, ‘weevil’, ‘centipede’, ‘inchworm’, ‘parrot’, ‘lovebirds’, ‘flamingo’, ‘penguin’, ‘chicken’, ‘duckling’, ‘spider'
 ];
 
 var songs = [
@@ -22,6 +22,8 @@ var songs = [
 ];
 
 var sound = document.getElementById('sound');
+
+document.getElementById("wordSpotlight").style.textTransform = "uppercase";
 
 /* functions that allow each button link to it's intended category */
 function main() {
@@ -94,6 +96,7 @@ function generateButtons() {
 
 function guessedWord() {
   wordStatus = answer.split('').map(letter => (guessed.indexOf(letter) >= 0 ? letter : ' _ ')).join("");
+  debugger;
 
   document.getElementById("wordSpotlight").innerHTML = wordStatus;
 }
@@ -138,11 +141,11 @@ function checkIfGameWon() {
 function checkIfGameLost() {
   if (mistakes === maxWrong) {
     document.getElementById('wordSpotlight').innerHTML = 'The answer was: ' + answer;
-    document.getElementById('keyboard').innerHTML. = 'Even though you lost, you will always be a winner in my book!';
+    document.getElementById('keyboard').innerHTML = 'You\'ll get it next time!';
   }
 }
 
-function mainMenu() {
+function backToMain() {
   document.getElementById("main").style.display = "block";
   document.getElementById("play").style.display = "none";
   sound.pause();
