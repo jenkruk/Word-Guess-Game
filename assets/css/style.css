@@ -78,15 +78,17 @@ button:active {
 
 #tryAgain:hover {
     float: left;
+    color: #124b90;
     margin-right: 8px !important;
-    background-color: #f5e640;
+    background-color: lightblue;
     font-size: 42px;
 }
 
 #tryAgain:active {
     float: left;
+    color: #124b90;
     margin-right: 8px !important;
-    background-color: #f5e640;
+    background-color: lightblue;
     width: 250px;
     font-size: 36px;
 }
@@ -107,6 +109,7 @@ button:active {
     margin: 0 auto;
     font-size: 36px;
     cursor: pointer;
+    background-color: lightblue;
 }
 
 #mainMenu {
@@ -126,13 +129,15 @@ button:active {
 
 #mainMenu:hover {
     float: left;
-    background-color: #f5e640;
+    color: #124b90;
+    background-color: lightblue;
     font-size: 42px;
 }
 
 #mainMenu:active {
     float: left;
-    background-color: #f5e640;
+    color: #124b90;
+    background-color: lightblue;
     width: 250px;
     font-size: 36px;
 }

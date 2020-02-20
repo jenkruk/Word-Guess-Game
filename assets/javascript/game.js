@@ -153,7 +153,15 @@ function tryAgain() {
   document.getElementById("main").style.display = "none";
   document.getElementById("play").style.display = "block";
   document.getElementById('treePic').src = "/assets/images/0.jpg";
-  window.location.reload();
+  answer = "";
+  maxWrong = 7;
+  mistakes = 0;
+  guessed = [];
+  wordStatus = null;
+  updateMistakes();
+  randomWord();
+  generateButtons();
+  guessedWord();
 }
 
 randomWord();
