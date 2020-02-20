@@ -119,14 +119,14 @@ function handleGuess(chosenLetter) {
 
 /* Changes picture every miss */
 function updateTreePicture() {
-  document.getElementById('treePic').src = "/assets/images/" + mistakes + '.jpg';
+  document.getElementById('treePic').src = "./assets/images/" + mistakes + '.jpg';
 }
 
 
 function checkIfGameWon() {
   if (wordStatus === answer) {
     document.getElementById('keyboard').innerHTML = 'You Won!!!';
-    document.getElementById('treePic').src = "/assets/images/0.jpg";
+    document.getElementById('treePic').src = "./assets/images/0.jpg";
   }
 }
 
@@ -140,7 +140,7 @@ function checkIfGameLost() {
 function mainMenu() {
   document.getElementById("main").style.display = "block";
   document.getElementById("play").style.display = "none";
-  document.getElementById('treePic').src = "/assets/images/0.jpg";
+  document.getElementById('treePic').src = "./assets/images/0.jpg";
   document.getElementById('keyboard').innerHTML = buttonsHTML;
   mistakes = 0;
   guessed = [];
@@ -152,7 +152,7 @@ function mainMenu() {
 function tryAgain() {
   document.getElementById("main").style.display = "none";
   document.getElementById("play").style.display = "block";
-  document.getElementById('treePic').src = "/assets/images/0.jpg";
+  document.getElementById('treePic').src = "./assets/images/0.jpg";
   answer = "";
   maxWrong = 7;
   mistakes = 0;
