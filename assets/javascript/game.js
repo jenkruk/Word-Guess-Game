@@ -32,6 +32,7 @@ function generateButtons() {
         ` + letter + `
       </button>
     `).join('');
+
   document.getElementById('keyboard').innerHTML = buttonsHTML;
 }
 
@@ -70,10 +71,6 @@ function checkIfGameLost() {
 function main() {
   document.getElementById("main").style.display = "block";
   document.getElementById("play").style.display = "none";
-}
-
-function randomWord() {
-  answer = critters[Math.floor(Math.random() * critters.length)];
 }
 
 function play() {
@@ -123,6 +120,10 @@ function song() {
   updateTreePicture();
 }
 
+function randomWord() {
+  answer = critters[Math.floor(Math.random() * critters.length)];
+}
+
 function handleGuess(chosenLetter) {
   guessed.indexOf(chosenLetter) === -1 ? guessed.push(chosenLetter) : null;
   document.getElementById(chosenLetter).setAttribute('disabled', true);
@@ -167,3 +168,7 @@ function backToMain() {
   generateButtons();
   guessedWord();
 }
+
+randomWord();
+generateButtons();
+guessedWord();
