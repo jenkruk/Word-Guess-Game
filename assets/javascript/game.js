@@ -74,7 +74,6 @@ function song() {
   updateTreePicture();
 }
 
-
 function randomWord() {
   answer = flowers[Math.floor(Math.random() * flowers.length)];
 }
@@ -83,7 +82,7 @@ function generateButtons() {
   let buttonsHTML = 'abcdefghijklmnopqrstuvwxyz'.split('').map(letter =>
     `
       <button
-        class="btn keyboard my-2 btn-success text-uppercase"
+        class="btn keyboard btn-success text-uppercase"
         id='` + letter + `'
         onClick="handleGuess('` + letter + `')"
       >
@@ -149,6 +148,15 @@ function backToMain() {
   document.getElementById("main").style.display = "block";
   document.getElementById("play").style.display = "none";
   document.getElementById('treePic').src = "./assets/main img/main.jpg";
+  answer = "";
+  maxWrong = 7;
+  mistakes = 0;
+  guessed = [];
+  wordStatus = null;
+  updateMistakes();
+  randomWord();
+  generateButtons();
+  guessedWord();
   sound.pause();
 }
 

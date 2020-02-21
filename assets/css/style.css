@@ -7,17 +7,15 @@
 .gameTitle {
     font-family: 'Antic Didone', serif;
     color: #f7931e;
-    font-size: 60px;
+    font-size: 46px;
     text-shadow: 2px 4px 6px darkgrey;
 }
 
-#wordSpotlight {
-    color: #f8931f;
-}
+
 
 #main,
 p {
-    font-size: 30px;
+    font-size: 24px;
 }
 
 #blue {
@@ -43,14 +41,14 @@ p {
 #orange,
 #red {
     margin: 0 auto;
-    margin-top: 20px;
-    font-size: 28px;
+    margin-top: 10px;
+    font-size: 20px;
     line-height: 40px;
     text-align: center;
-    width: 160px;
-    height: 60px;
+    width: 130px;
+    height: 50px;
     cursor: pointer;
-    padding-top: 11px;
+    padding-top: 5px;
     color: white;
 }
 
@@ -59,7 +57,7 @@ p {
 #orange:hover,
 #red:hover {
     color: white;
-    font-size: 30px !important;
+    font-size: 24px !important;
     background-color: rgb(255, 193, 7) !important;
 }
 
@@ -68,8 +66,8 @@ p {
 #orange:active,
 #red:active {
     color: white;
-    width: 160px;
-    font-size: 28px !important;
+    width: 130px;
+    font-size: 20px !important;
     background-color: rgb(255, 193, 7) !important;
 
 }
@@ -79,26 +77,31 @@ p {
 }
 
 #track {
-    font-size: 24px;
+    font-size: 20px;
+}
+
+#wordSpotlight {
+    color: #f8931f;
 }
 
 #keyboard {
-    width: 980px;
+    width: 490px;
     margin: 0 auto;
-    font-size: 36px;
 }
 
 button {
-    font-size: 28px !important;
+    font-size: 18px !important;
     cursor: pointer;
     border-radius: 0 !important;
-    height: 50px !important;
-    width: 55px !important;
+    height: 30px !important;
+    width: 35px !important;
+    margin: 2px 0 2px 0 !important;
+    padding: 0 0 10px 0 !important;
 }
 
 button:hover {
     background-color: rgb(255, 193, 7) !important;
-    font-size: 32px !important;
+    font-size: 20px !important;
     border-radius: 0 !important;
     border-color: rgb(255, 193, 7) !important;
     padding: 0 0 10px 0 !important;
@@ -106,62 +109,57 @@ button:hover {
 
 button:active {
     background-color: rgb(255, 193, 7) !important;
-    width: 80px;
-    font-size: 28px !important;
+    width: 35px;
+    font-size: 18px !important;
     border-radius: 0 !important;
+    padding: 0 0 10px 0 !important;
 
 }
 
 #categoryName {
     text-align: center;
-    width: 980px;
+    width: 490px;
     background-color: #cae4fd;
     margin: 0 auto;
 }
 
 
 #tryAgain {
-    float: left;
     margin: 0 auto;
-    margin-top: 20px;
+    margin-top: 12px;
     margin-right: 16px;
-    font-size: 20px;
+    font-size: 16px;
     line-height: 40px;
     text-align: center;
-    width: 150px;
-    height: 50px;
+    width: 125px;
+    height: 40px;
     cursor: pointer;
-    padding-top: 5px;
     color: white;
     background-color: #007bff;
 }
 
 #tryAgain:hover {
-    float: left;
-    color: white;
-    font-size: 24px !important;
-    background-color: rgb(255, 193, 7);
-}
-
-#tryAgain:active {
-    float: left;
     color: white;
     font-size: 20px !important;
     background-color: rgb(255, 193, 7);
 }
 
+#tryAgain:active {
+    color: white;
+    font-size: 16px !important;
+    background-color: rgb(255, 193, 7);
+}
 
 #backToMain {
     float: left;
     margin: 0 auto;
-    margin-top: 20px;
-    font-size: 20px;
+    margin-top: 12px;
+    font-size: 16px;
     line-height: 40px;
     text-align: center;
-    width: 150px;
-    height: 50px;
+    width: 125px;
+    height: 40px;
     cursor: pointer;
-    padding-top: 5px;
     color: white;
     background-color: #dc3545;
 }
@@ -170,13 +168,24 @@ button:active {
     float: left;
     color: white;
     background-color: rgb(255, 193, 7);
-    font-size: 24px;
+    font-size: 20px;
 }
 
 #backToMain:active {
     float: left;
     color: white;
     background-color: rgb(255, 193, 7);
-    width: 150px;
-    font-size: 20px;
+    font-size: 16px;
+}
+
+@media (min-width:0px) and (max-width: 767px) {
+
+    body {
+        min-width: 330px;
+    }
+
+}
+
+@media(min-width:768px) {
+    body {}
 }
