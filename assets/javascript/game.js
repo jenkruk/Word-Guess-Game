@@ -4,6 +4,7 @@ var maxWrong = 7;
 var wrongGuess = 0;
 var guessed = [];
 var wordStatus = null;
+var categoryName = '';
 
 
 /* arrays */
@@ -22,20 +23,6 @@ var critters = [
 var songs = [
   'happy', 'anticipation', 'bathwater', 'dreams', 'luka', 'promises', 'valentine', 'why'
 ];
-
-/* main page */
-function main() {
-  document.getElementById('main').style.display = 'block';
-  document.getElementById('play').style.display = 'none';
-}
-
-/* play page */
-function play() {
-  document.getElementById('main').style.display = 'none';
-  document.getElementById('play').style.display = 'block';
-  document.getElementByClassName('gameTitle').style.display = 'none';
-  document.getElementById('maxWrong').innerHTML = maxWrong;
-}
 
 /* play page keyboard buttons */
 function generateButtons() {
@@ -65,7 +52,15 @@ function guessedWord() {
 
 /* Generates a random word from the array of the chosen category */
 function randomWord() {
-  answer = flowers[Math.floor(Math.random() * flowers.length)];
+  if (categoryName === 'Flowers') {
+    answer = flowers[Math.floor(Math.random() * flowers.length)];
+  } else if (categoryName === 'Trees') {
+    answer = trees[Math.floor(Math.random() * trees.length)];
+  } else if (categoryName === 'Critters') {
+    answer = critters[Math.floor(Math.random() * critters.length)];
+  } else if (categoryName === 'Songs') {
+    answer = songs[Math.floor(Math.random() * songs.length)];
+  }
 }
 
 /* Shows number of wrong guesses */
@@ -79,7 +74,7 @@ function updateTreePicture() {
   document.getElementById('treePic').src = './assets/images/' + wrongGuess + '.jpg';
 }
 
-/* Plays a sound, shows 'you won' text and refreshes tree to full when player wins */
+/* Refreshes tree to full, plays a sound and shows 'you won' text when player wins */
 function checkIfGameWon() {
   if (wordStatus === answer) {
     document.getElementById('keyboard').innerHTML = 'You Won, Smarty Pants!';
@@ -97,13 +92,26 @@ function checkIfGameLost() {
   }
 }
 
-/* This function runs when the user picks the flowers category from the main menu */
-function flower() {
+/* main page */
+function main() {
+  document.getElementById('main').style.display = 'block';
+  document.getElementById('play').style.display = 'none';
+}
+
+/* play page */
+function play() {
   document.getElementById('main').style.display = 'none';
   document.getElementById('play').style.display = 'block';
+  document.getElementById('maxWrong').innerHTML = maxWrong;
+}
+
+/* This function runs when the user picks the flowers category from the main menu */
+function flower() {
+  document.getElementById('categoryName').innerHTML = 'Flowers';
   answer = flowers[Math.floor(Math.random() * flowers.length)];
-  word = flowers[answer];
-  document.getElementById('categoryName').innerHTML = 'Types of Flowers';
+  document.getElementById('main').style.display = 'none';
+  document.getElementById('play').style.display = 'block';
+  document.getElementById('maxWrong').innerHTML = maxWrong;
   updateTreePicture();
   randomWord();
   generateButtons();
@@ -112,11 +120,11 @@ function flower() {
 
 /* This function runs when the user picks the trees category from the main menu */
 function tree() {
+  document.getElementById('categoryName').innerHTML = 'Trees';
   document.getElementById('main').style.display = 'none';
   document.getElementById('play').style.display = 'block';
   answer = trees[Math.floor(Math.random() * trees.length)];
-  word = trees[answer];
-  document.getElementById('categoryName').innerHTML = 'Types of Trees';
+  document.getElementById('maxWrong').innerHTML = maxWrong;
   updateTreePicture();
   randomWord();
   generateButtons();
@@ -125,11 +133,11 @@ function tree() {
 
 /* This function runs when the user picks the critters category from the main menu */
 function critter() {
+  document.getElementById('categoryName').innerHTML = 'Critters';
   document.getElementById('main').style.display = 'none';
   document.getElementById('play').style.display = 'block';
   answer = critters[Math.floor(Math.random() * critters.length)];
-  word = critters[answer];
-  document.getElementById('categoryName').innerHTML = 'Critters';
+  document.getElementById('maxWrong').innerHTML = maxWrong;
   updateTreePicture();
   randomWord();
   generateButtons();
@@ -138,11 +146,11 @@ function critter() {
 
 /* This function runs when the user picks the songs category from the main menu */
 function song() {
+  document.getElementById('categoryName').innerHTML = 'Songs';
   document.getElementById('main').style.display = 'none';
   document.getElementById('play').style.display = 'block';
   answer = songs[Math.floor(Math.random() * songs.length)];
-  word = songs[answer];
-  document.getElementById('categoryName').innerHTML = 'One Word Song Titles';
+  document.getElementById('maxWrong').innerHTML = maxWrong;
   updateTreePicture();
   randomWord();
   generateButtons();
@@ -150,8 +158,10 @@ function song() {
 }
 
 /* This function pushes the correct letters to the result area/blank lines when the 
-user clicks on them, and disables the wrong letters. The functions within this function 
-update the wrongGuess number, updates win or lose text and updates tree picture accordingly */
+user clicks on them, and disables the wrong letters after they've been clicked
+on. 
+The functions within this function update the wrongGuess number, updates win or lose 
+text and updates tree picture accordingly */
 function handleGuess(chosenLetter) {
   guessed.indexOf(chosenLetter) === -1 ? guessed.push(chosenLetter) : null;
   document.getElementById(chosenLetter).setAttribute('disabled', true);
@@ -184,7 +194,9 @@ function tryAgain() {
   guessedWord();
 }
 
-/* This function takes the player back to the homepage when the Main Menu button is clicked */
+/* This function takes the player back to the homepage when the Main Menu button is clicked 
+and refreshes the category pages so that if the player goes back to the same page they were
+just on - a new word will be chosen instead of just still showing the word they were just on*/
 function backToMain() {
   document.getElementById('main').style.display = 'block';
   document.getElementById('play').style.display = 'none';
