@@ -63,6 +63,26 @@ function randomWord() {
   }
 }
 
+/* This function pushes the correct letters to the result area/blank lines when the 
+user clicks on them, and disables the wrong letters after they've been clicked
+on. 
+The functions within this function update the wrongGuess number, updates win or lose 
+text and updates tree picture accordingly */
+function handleGuess(chosenLetter) {
+  guessed.indexOf(chosenLetter) === -1 ? guessed.push(chosenLetter) : null;
+  document.getElementById(chosenLetter).setAttribute('disabled', true);
+
+  if (answer.indexOf(chosenLetter) >= 0) {
+    guessedWord();
+    checkIfGameWon();
+  } else if (answer.indexOf(chosenLetter) === -1) {
+    wrongGuess++;
+    updateWrongGuess();
+    checkIfGameLost();
+    updateTreePicture();
+  }
+}
+
 /* Shows number of wrong guesses */
 function updateWrongGuess() {
   document.getElementById('wrongGuess').innerHTML = wrongGuess;
@@ -112,6 +132,7 @@ function flower() {
   document.getElementById('main').style.display = 'none';
   document.getElementById('play').style.display = 'block';
   document.getElementById('maxWrong').innerHTML = maxWrong;
+  categoryName = 'Flowers';
   updateTreePicture();
   randomWord();
   generateButtons();
@@ -125,6 +146,7 @@ function tree() {
   document.getElementById('play').style.display = 'block';
   answer = trees[Math.floor(Math.random() * trees.length)];
   document.getElementById('maxWrong').innerHTML = maxWrong;
+  categoryName = 'Trees';
   updateTreePicture();
   randomWord();
   generateButtons();
@@ -138,6 +160,7 @@ function critter() {
   document.getElementById('play').style.display = 'block';
   answer = critters[Math.floor(Math.random() * critters.length)];
   document.getElementById('maxWrong').innerHTML = maxWrong;
+  categoryName = 'Critters';
   updateTreePicture();
   randomWord();
   generateButtons();
@@ -151,30 +174,11 @@ function song() {
   document.getElementById('play').style.display = 'block';
   answer = songs[Math.floor(Math.random() * songs.length)];
   document.getElementById('maxWrong').innerHTML = maxWrong;
+  categoryName = 'Songs';
   updateTreePicture();
   randomWord();
   generateButtons();
   guessedWord();
-}
-
-/* This function pushes the correct letters to the result area/blank lines when the 
-user clicks on them, and disables the wrong letters after they've been clicked
-on. 
-The functions within this function update the wrongGuess number, updates win or lose 
-text and updates tree picture accordingly */
-function handleGuess(chosenLetter) {
-  guessed.indexOf(chosenLetter) === -1 ? guessed.push(chosenLetter) : null;
-  document.getElementById(chosenLetter).setAttribute('disabled', true);
-
-  if (answer.indexOf(chosenLetter) >= 0) {
-    guessedWord();
-    checkIfGameWon();
-  } else if (answer.indexOf(chosenLetter) === -1) {
-    wrongGuess++;
-    updateWrongGuess();
-    checkIfGameLost();
-    updateTreePicture();
-  }
 }
 
 /* This function refreshes the page for the category the player is in
