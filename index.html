@@ -14,81 +14,86 @@
   <!-- Google Font -->
   <link href="https://fonts.googleapis.com/css?family=Antic+Didone&display=swap" rel="stylesheet">
   <!-- Sound Effects -->
-  <audio src="./assets/sound/wand.wav" id="sound" crossOrigin="anonymous"></audio>
+  <audio src="./assets/sound/wand.wav" id="wand" crossOrigin="anonymous"></audio>
+  <audio src="./assets/sound/wind.wav" id="wind" crossOrigin="anonymous"></audio>
+  <audio src="./assets/sound/typewriter.wav" id="type" crossOrigin="anonymous"></audio>
 
   <!-- Tab Title -->
   <title>Tree of Lives</title>
 </head>
 
-<div class="container text-center">
-  <div class="gameTitle py-2">Tree of Lives</div>
-  <img id='treePic' src="./assets/main img/main.jpg" alt="Tree of Lives">
+<body>
+  <div class="container-fluid">
+    <row class="d-flex justify-content-center py-2">
+      <div class="gameTitle">Tree of Lives</div>
+    </row>
 
-  <!--MAIN PAGE-->
-  <div id="main">
-    <div class="intro">
-      <row class="text-center">
-        <div class="col-md-12">
-          <p class="text-center mt-1">Select a category to get started!</p>
-        </div>
-      </row>
+    <img id='treePic' src="./assets/main img/main.jpg" alt="Tree of Lives">
+
+    <!--MAIN PAGE-->
+    <div id="main">
+      <div class="intro">
+        <row class="d-flex justify-content-around mx-auto">
+          <div class="col-md-12">
+            <p class="text-center mt-1">Select a category to get started!</p>
+          </div>
+        </row>
+      </div>
+
+      <!--Category Buttons-->
+      <div class="mainMenu">
+        <row class="text-center text-uppercase d-inline-flex">
+          <div id="blue" onClick="flower()">Flowers</div>
+        </row>
+        <row class="text-center text-uppercase d-inline-flex">
+          <div id="green" onClick="tree()">Trees</div>
+        </row>
+        <row class="text-center text-uppercase d-inline-flex">
+          <div id="orange" onClick="critter()">Critters</div>
+        </row>
+        <row class="text-center text-uppercase d-inline-flex">
+          <div id="red" onClick="song()">Songs</div>
+        </row>
+      </div>
     </div>
 
-    <!--Category Buttons-->
-    <div class="mainMenu">
-      <row class="text-center text-uppercase d-inline-flex">
-        <div id="blue" onClick="flower()">Flowers</div>
-      </row>
-      <row class="text-center text-uppercase d-inline-flex">
-        <div id="green" onClick="tree()">Trees</div>
-      </row>
-      <row class="text-center text-uppercase d-inline-flex">
-        <div id="orange" onClick="critter()">Critters</div>
-      </row>
-      <row class="text-center text-uppercase d-inline-flex">
-        <div id="red" onClick="song()">Songs</div>
-      </row>
-    </div>
+  </div>
   </div>
 
-</div>
-</div>
+  <!--PLAY PAGE-->
+  <div class="container-fluid py-2"></div>
+  <div id="play">
+    <!--tracking the score-->
+    <row class="text-center d-inline-flex">
+      <p id="categoryName"></p>
+    </row>
+    <row class="text-center">
+      <div id="track">Wrong Guesses: <span id='wrongGuess'>0</span> of <span id='maxWrong'></span></div>
 
-<!--PLAY PAGE-->
-<div class="container py-2"></div>
-<div id="play">
-  <!--tracking the score-->
-  <row class="text-center d-inline-flex">
-    <p id="categoryName"></p>
-  </row>
-  <row class="text-center">
-    <div id="track">Wrong Guesses: <span id='wrongGuess'>0</span> of <span id='maxWrong'></span></div>
+      <!--blank lines for the random word-->
 
+      <p id="result">blank lines for the randomly chosen word</p>
+    </row>
+    <!--keyboard letters-->
+    <row class="w-100 text-center d-inline-flex text-uppercase">
+      <div id="keyboard"></div>
+    </row>
+    <row class="text-center d-inline-flex">
+      <div id="tryAgain" onMouseDown="type.play()" onClick="tryAgain()">Try Again</div>
+      <div id="backToMain" onMouseDown="type.play()" onClick="backToMain()">Main Menu</div>
+    </row>
+  </div>
+  </div>
+  </div>
 
-    <!--blank lines for the random word-->
-
-    <p id="result">blank lines for the randomly chosen word</p>
-  </row>
-  <!--keyboard letters-->
-  <row class=" w-100 text-center d-inline-flex text-uppercase">
-    <div id="keyboard"></div>
-  </row>
-  <row class="text-center d-inline-flex">
-    <div id="tryAgain" onClick="tryAgain()">Try Again</div>
-    <div id="backToMain" onClick="backToMain()">Main Menu</div>
-  </row>
-</div>
-</div>
-</div>
-
-<!-- jQuery -->
-<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"></script>
-<!-- jsDelivr -->
-<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
-<!--bootstrap javascript-->
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
-<!-- javascript game.js-->
-<script type="text/javascript" src="./assets/javascript/game.js"></script>
+  <!-- jQuery -->
+  <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"></script>
+  <!-- jsDelivr -->
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
+  <!--bootstrap javascript-->
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+  <!-- javascript game.js-->
+  <script type="text/javascript" src="./assets/javascript/game.js"></script>
 
 </body>
 

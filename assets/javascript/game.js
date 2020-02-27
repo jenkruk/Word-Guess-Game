@@ -100,7 +100,7 @@ function checkIfGameWon() {
     document.getElementById('keyboard').innerHTML = 'You Won, Smarty Pants!';
     document.getElementById('treePic').src = './assets/images/0.jpg';
     var sound = document.getElementById('sound');
-    sound.play();
+    wand.play();
   }
 }
 
@@ -109,6 +109,7 @@ function checkIfGameLost() {
   if (wrongGuess === maxWrong) {
     document.getElementById('result').innerHTML = 'The answer was: ' + answer;
     document.getElementById('keyboard').innerHTML = 'You\'ll get it next time!';
+    wind.play();
   }
 }
 

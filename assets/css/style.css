@@ -172,13 +172,77 @@ button:active {
     font-size: 16px;
 }
 
-@media (min-width:0px) and (max-width: 767px) {
+@media (min-width:320px) and (max-width: 485px) {
 
     body {
-        min-width: 330px;
+        min-width: 320px;
     }
-}
 
-@media(min-width:768px) {
-    body {}
+    .gameTitle {
+        font-size: 36px;
+    }
+
+    #treePic {
+        margin: 0 20px 5px 0;
+        width: 225px;
+        height: 225px;
+    }
+
+    p {
+        font-size: 17px;
+        font-variant: small-caps;
+    }
+
+    #categoryName {
+        text-align: center;
+        width: 320px;
+        margin: 0 auto;
+        font-size: 18px;
+        font-variant: small-caps;
+    }
+
+    #track {
+        font-size: 14px;
+    }
+
+    #keyboard {
+        width: 310px;
+    }
+
+    button {
+        font-size: 14px !important;
+        height: 20px !important;
+        width: 25px !important;
+        margin: 1px 0 1px 0 !important;
+        padding: 0 0 5px 0 !important;
+    }
+
+    button:hover {
+        font-size: 16px !important;
+        padding: 0 0 5px 0 !important;
+    }
+
+    button:active {
+        width: 25px;
+        font-size: 14px !important;
+        padding: 0 0 5px 0 !important;
+    }
+
+    #tryAgain,
+    #backToMain {
+        font-size: 14px;
+        line-height: 30px;
+        width: 100px;
+        height: 30px;
+    }
+
+    #tryAgain:hover,
+    #backToMain:hover {
+        font-size: 16px !important;
+    }
+
+    #tryAgain:active,
+    #backToMain:active {
+        font-size: 14px !important;
+    }
 }
